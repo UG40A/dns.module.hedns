@@ -4,5 +4,5 @@ go 1.15
 
 require (
 	github.com/caddyserver/caddy/v2 v2.5.1
-	github.com/UG40A/hedns v0.1.7
+	github.com/UG40A/hedns v0.1.8
 )
