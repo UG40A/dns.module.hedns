@@ -1,4 +1,4 @@
-package duckdns
+package hedns
 
 import (
 	"github.com/caddyserver/caddy/v2"
@@ -7,8 +7,6 @@ import (
 )
 
 // Provider wraps the provider implementation as a Caddy module.
-type Provider struct{ *duckdns.Provider }
-
 func init() {
 	caddy.RegisterModule(Provider{})
 }
