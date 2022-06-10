@@ -24,7 +24,7 @@ func (Provider) CaddyModule() caddy.ModuleInfo {
 func (p *Provider) Provision(ctx caddy.Context) error {
 	repl := caddy.NewReplacer()
 	p.Provider.APIToken = repl.ReplaceAll(p.Provider.APIToken, "")
-	p.Provider.OverrideDomain = repl.ReplaceAll(p.Provider.OverrideDomain, "")
+	p.Provider.Domain = repl.ReplaceAll(p.Provider.Domain, "")
 	return nil
 }
 
@@ -56,14 +56,14 @@ func (p *Provider) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
 				if d.NextArg() {
 					return d.ArgErr()
 				}
-			case "override_domain":
+			case "domain":
 				if !d.NextArg() {
 					return d.ArgErr()
 				}
-				if p.Provider.OverrideDomain != "" {
+				if p.Provider.Domain != "" {
 					return d.Err("Override domain already set")
 				}
-				p.Provider.OverrideDomain = d.Val()
+				p.Provider.Domain = d.Val()
 				if d.NextArg() {
 					return d.ArgErr()
 				}
