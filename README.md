@@ -6,7 +6,7 @@ This package contains a DNS provider module for [Caddy](https://github.com/caddy
 ## Caddy module name
 
 ```
-dns.providers.duckdns
+dns.providers.hedns
 ```
 
 ## Caddyfile definition
